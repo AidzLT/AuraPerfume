@@ -310,7 +310,7 @@ const PRODUCTS = [
     tag: "khuyen-mai",
     notes: "Thiệp viết tay cao cấp · Bao thư vàng",
     desc: "Handwritten Card — hương thơm tinh tế với tầng hương thiệp viết tay cao cấp · bao thư vàng. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
-    stock: 1,
+    stock: 5,
   },
 ];
 

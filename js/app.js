@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   renderHomeSections();
   initSlider();
-  initCartUI();
   initContactForm();
   initDarkMode();
   initCountdown();
@@ -87,77 +86,6 @@ function initSlider() {
   );
   document.querySelector(".slider")?.addEventListener("mouseenter", () => clearInterval(timer));
   document.querySelector(".slider")?.addEventListener("mouseleave", reset);
-}
-
-/* ---------- Giỏ hàng UI ---------- */
-function initCartUI() {
-  const modal = document.createElement("div");
-  modal.className = "cart-modal";
-  modal.id = "cart-modal";
-  modal.innerHTML = `
-    <div class="cart-box">
-      <h3>Giỏ hàng</h3>
-      <div id="cart-items"></div>
-      <p class="cart-total">Tổng: <span id="cart-total"></span></p>
-      <button class="btn btn-primary" id="cart-close">Đóng</button>
-    </div>`;
-  document.body.appendChild(modal);
-  document.querySelectorAll(".cart-link").forEach((a) =>
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      renderCart();
-      modal.classList.add("open");
-    }),
-  );
-  modal
-    .querySelector("#cart-close")
-    .addEventListener("click", () => modal.classList.remove("open"));
-}
-
-function renderCart() {
-  const wrap = document.getElementById("cart-items");
-  const cart = getCart();
-  if (!cart.length) {
-    wrap.innerHTML = "<p>Giỏ hàng trống</p>";
-    document.getElementById("cart-total").textContent = "0đ";
-    return;
-  }
-  let total = 0;
-  wrap.innerHTML = cart
-    .map((i) => {
-      const p = PRODUCTS.find((x) => x.id === i.id);
-      total += p.price * i.qty;
-      return `<div class="cart-row">
-      <span>${p.name} × ${i.qty}</span>
-      <span>${formatPrice(p.price * i.qty)}</span>
-      <button data-inc="${p.id}">+</button>
-      <button data-dec="${p.id}">−</button>
-      <button data-del="${p.id}">Xoá</button>
-    </div>`;
-    })
-    .join("");
-  document.getElementById("cart-total").textContent = formatPrice(total);
-  wrap.querySelectorAll("[data-inc]").forEach(
-    (b) =>
-      (b.onclick = () => {
-        updateQty(Number(b.dataset.inc), 1);
-        renderCart();
-      }),
-  );
-  wrap.querySelectorAll("[data-dec]").forEach(
-    (b) =>
-      (b.onclick = () => {
-        updateQty(Number(b.dataset.dec), -1);
-        renderCart();
-      }),
-  );
-  wrap.querySelectorAll("[data-del]").forEach(
-    (b) =>
-      (b.onclick = () => {
-        removeFromCart(Number(b.dataset.del));
-        renderCart();
-      }),
-  );
 }
 
 /* ---------- Form liên hệ ---------- */

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi tiết sản phẩm — Aura Perfume</title>
+    <title>Giỏ hàng — Aura Perfume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,23 +32,25 @@
         </nav>
         <div class="header-actions">
           <button id="dark-toggle" class="nav-link dark-toggle" aria-label="Chế độ tối">☾</button>
-          <a href="cart.html" class="nav-link cart-link">Giỏ hàng (<span class="cart-count">0</span>)</a>
+          <a href="cart.html" class="nav-link cart-link"
+            >Giỏ hàng (<span class="cart-count">0</span>)</a
+          >
         </div>
       </div>
     </header>
 
-    <main class="product-detail-wrap">
-      <p class="breadcrumb">
-        <a href="index.html">Trang chủ</a> › <a href="products.html">Sản phẩm</a> ›
-        <span id="bc-name"></span>
-      </p>
-      <div class="product-detail" id="product-detail">
-        <!-- RENDER TỪ JS: đọc ?id= rồi tìm trong PRODUCTS -->
+    <main class="cart-page">
+      <h1 class="section-title">Giỏ hàng</h1>
+      <div class="cart-layout">
+        <div id="cart-list" class="cart-list"></div>
+        <aside class="cart-summary">
+          <h3>Tóm tắt đơn hàng</h3>
+          <p>Phí vận chuyển: Miễn phí</p>
+          <p class="cart-total-line">Tổng cộng: <span id="cart-total">0đ</span></p>
+          <button class="btn btn-primary" id="checkout-btn">Thanh toán</button>
+          <a class="link-editorial" href="products.html">← Tiếp tục mua sắm</a>
+        </aside>
       </div>
-      <section class="related">
-        <h2 class="section-title">Sản phẩm liên quan</h2>
-        <div class="product-grid" id="related-grid"></div>
-      </section>
     </main>
 
     <footer class="site-footer">
@@ -75,6 +77,6 @@
     <script src="js/products.js"></script>
     <script src="js/carts.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/product.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>
