@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initDarkMode();
   initCountdown();
   const navToggle = document.getElementById("nav-toggle");
-  if (navToggle) navToggle.addEventListener("click", () => document.querySelector(".main-nav").classList.toggle("open"));
+  if (navToggle)
+    navToggle.addEventListener("click", () =>
+      document.querySelector(".main-nav").classList.toggle("open"),
+    );
   if (document.getElementById("catalog-grid")) initCatalog();
   updateCartBadge();
 });

@@ -10,11 +10,11 @@ function saveCart(cart) {
   updateCartBadge();
 }
 
-function addToCart(id) {
+function addToCart(id, qty = 1) {
   const cart = getCart();
   const item = cart.find((i) => i.id === id);
-  if (item) item.qty += 1;
-  else cart.push({ id, qty: 1 });
+  if (item) item.qty += qty;
+  else cart.push({ id, qty });
   saveCart(cart);
 }
 

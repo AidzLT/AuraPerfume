@@ -9,6 +9,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "hot",
     notes: "Hổ phách · Vani · Đàn hương",
+    desc: "Amber Night — hương thơm tinh tế với tầng hương hổ phách · vani · đàn hương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 7,
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "moi",
     notes: "Khói · Trầm hương · Da lộn",
+    desc: "Black Smoke — hương thơm tinh tế với tầng hương khói · trầm hương · da lộn. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 14,
   },
   {
     id: 3,
@@ -27,6 +31,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "khuyen-mai",
     notes: "Biển · Bergamot · Xô thơm",
+    desc: "Blue Horizon — hương thơm tinh tế với tầng hương biển · bergamot · xô thơm. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 6,
   },
   {
     id: 4,
@@ -36,6 +42,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "hot",
     notes: "Da lộn · Tiêu đen · Gỗ sồi",
+    desc: "Dark Leather — hương thơm tinh tế với tầng hương da lộn · tiêu đen · gỗ sồi. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 13,
   },
   {
     id: 5,
@@ -45,6 +53,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "moi",
     notes: "Cát vàng · Hổ phách · Nhang",
+    desc: "Desert Amber — hương thơm tinh tế với tầng hương cát vàng · hổ phách · nhang. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 5,
   },
   {
     id: 6,
@@ -54,6 +64,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "khuyen-mai",
     notes: "Gỗ thông · Rêu · Hoắc hương",
+    desc: "Forest Wood — hương thơm tinh tế với tầng hương gỗ thông · rêu · hoắc hương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 12,
   },
   {
     id: 7,
@@ -63,6 +75,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "hot",
     notes: "Oud · Nhụy hương · Vani",
+    desc: "Golden Oud — hương thơm tinh tế với tầng hương oud · nhụy hương · vani. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 4,
   },
   {
     id: 8,
@@ -72,6 +86,8 @@ const PRODUCTS = [
     gender: "nam",
     tag: "moi",
     notes: "Da thật · Bergamot · Tiêu",
+    desc: "Royal Leather — hương thơm tinh tế với tầng hương da thật · bergamot · tiêu. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 11,
   },
 
   {
@@ -82,6 +98,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "moi",
     notes: "Anh đào · Hoa hồng · Vani",
+    desc: "Cherry Kiss — hương thơm tinh tế với tầng hương anh đào · hoa hồng · vani. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 3,
   },
   {
     id: 10,
@@ -91,6 +109,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "hot",
     notes: "Hoa hồng · Lê · Xạ hương",
+    desc: "Crystal Rose — hương thơm tinh tế với tầng hương hoa hồng · lê · xạ hương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 10,
   },
   {
     id: 11,
@@ -100,6 +120,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "hot",
     notes: "Hoa nhài · Vani · Đàn hương",
+    desc: "Jasmine Pearl — hương thơm tinh tế với tầng hương hoa nhài · vani · đàn hương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 2,
   },
   {
     id: 12,
@@ -109,6 +131,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "khuyen-mai",
     notes: "Oải hương · Cam · Xạ hương",
+    desc: "Lavender Mist — hương thơm tinh tế với tầng hương oải hương · cam · xạ hương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 9,
   },
   {
     id: 13,
@@ -118,6 +142,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "moi",
     notes: "Hoa hồng đêm · Vani · Gỗ",
+    desc: "Midnight Rose — hương thơm tinh tế với tầng hương hoa hồng đêm · vani · gỗ. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 1,
   },
   {
     id: 14,
@@ -127,6 +153,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "khuyen-mai",
     notes: "Hoa mẫu đơn · Dâu · Gỗ tuyết",
+    desc: "Pink Dream — hương thơm tinh tế với tầng hương hoa mẫu đơn · dâu · gỗ tuyết. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 8,
   },
   {
     id: 15,
@@ -136,6 +164,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "moi",
     notes: "Hoa trắng · Lê · Xạ hương",
+    desc: "Pure Blossom — hương thơm tinh tế với tầng hương hoa trắng · lê · xạ hương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 0,
   },
   {
     id: 16,
@@ -145,6 +175,8 @@ const PRODUCTS = [
     gender: "nu",
     tag: "hot",
     notes: "Hoa đậu biếc · Vani · Gỗ",
+    desc: "Velvet Bloom — hương thơm tinh tế với tầng hương hoa đậu biếc · vani · gỗ. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 7,
   },
 
   {
@@ -155,6 +187,8 @@ const PRODUCTS = [
     gender: "unisex",
     tag: "hot",
     notes: "Bạc hà · Biển · Xạ hương",
+    desc: "Cool Wave — hương thơm tinh tế với tầng hương bạc hà · biển · xạ hương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 14,
   },
   {
     id: 18,
@@ -164,6 +198,8 @@ const PRODUCTS = [
     gender: "unisex",
     tag: "khuyen-mai",
     notes: "Cam chanh · Bưởi · Trà xanh",
+    desc: "Fresh Citrus — hương thơm tinh tế với tầng hương cam chanh · bưởi · trà xanh. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 6,
   },
   {
     id: 19,
@@ -173,6 +209,8 @@ const PRODUCTS = [
     gender: "unisex",
     tag: "moi",
     notes: "Xạ hương · Gỗ · Hổ phách",
+    desc: "Imperial Musk — hương thơm tinh tế với tầng hương xạ hương · gỗ · hổ phách. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 13,
   },
   {
     id: 20,
@@ -182,6 +220,8 @@ const PRODUCTS = [
     gender: "unisex",
     tag: "moi",
     notes: "Biển · Bergamot · Hải dương",
+    desc: "Ocean Breeze — hương thơm tinh tế với tầng hương biển · bergamot · hải dương. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 5,
   },
   {
     id: 21,
@@ -191,6 +231,8 @@ const PRODUCTS = [
     gender: "unisex",
     tag: "hot",
     notes: "Mưa · Trà đen · Cam",
+    desc: "Silver Rain — hương thơm tinh tế với tầng hương mưa · trà đen · cam. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 12,
   },
   {
     id: 22,
@@ -200,6 +242,8 @@ const PRODUCTS = [
     gender: "unisex",
     tag: "khuyen-mai",
     notes: "Hoa hồng · Cam · Gỗ sồi",
+    desc: "Rose Elan — hương thơm tinh tế với tầng hương hoa hồng · cam · gỗ sồi. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 4,
   },
   {
     id: 23,
@@ -209,6 +253,8 @@ const PRODUCTS = [
     gender: "unisex",
     tag: "hot",
     notes: "Xạ hương quý · Vani · Gỗ",
+    desc: "Royal Musk — hương thơm tinh tế với tầng hương xạ hương quý · vani · gỗ. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 11,
   },
 
   {
@@ -219,6 +265,8 @@ const PRODUCTS = [
     gender: "qua-tang",
     tag: "moi",
     notes: "Bộ sample 5 chai mini · Hộp giấy",
+    desc: "Sample Gift Set — hương thơm tinh tế với tầng hương bộ sample 5 chai mini · hộp giấy. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 3,
   },
   {
     id: 25,
@@ -228,6 +276,8 @@ const PRODUCTS = [
     gender: "qua-tang",
     tag: "khuyen-mai",
     notes: "Túi nhung cao cấp · Dây ruy băng",
+    desc: "Velvet Pouch — hương thơm tinh tế với tầng hương túi nhung cao cấp · dây ruy băng. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 10,
   },
   {
     id: 26,
@@ -237,6 +287,8 @@ const PRODUCTS = [
     gender: "qua-tang",
     tag: "hot",
     notes: "Gói quà sang trọng · Thiệp viết tay",
+    desc: "Gift Wrapping — hương thơm tinh tế với tầng hương gói quà sang trọng · thiệp viết tay. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 2,
   },
   {
     id: 27,
@@ -246,6 +298,8 @@ const PRODUCTS = [
     gender: "qua-tang",
     tag: "moi",
     notes: "Hộp quà cao cấp · 2 chai mini",
+    desc: "Gift Box Deluxe — hương thơm tinh tế với tầng hương hộp quà cao cấp · 2 chai mini. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 9,
   },
   {
     id: 28,
@@ -255,6 +309,8 @@ const PRODUCTS = [
     gender: "qua-tang",
     tag: "khuyen-mai",
     notes: "Thiệp viết tay cao cấp · Bao thư vàng",
+    desc: "Handwritten Card — hương thơm tinh tế với tầng hương thiệp viết tay cao cấp · bao thư vàng. Thiết kế chai tối giản, sang trọng, phù hợp mọi dịp.",
+    stock: 1,
   },
 ];
 
