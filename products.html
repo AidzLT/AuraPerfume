@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sản phẩm — Aura Perfume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <img src="images/logo/AURA Perfume Metallic Gold Logo.png" alt="Aura Perfume Logo" class="brand-logo" />
+        </a>
+        <nav class="main-nav">
+          <a href="index.html#nuoc-hoa-nam">Nước Hoa Nam</a>
+          <a href="index.html#nuoc-hoa-nu">Nước Hoa Nữ</a>
+          <a href="index.html#nuoc-hoa-unisex">Unisex</a>
+          <a href="index.html#qua-tang">Quà Tặng</a>
+          <a href="products.html">Sản phẩm</a>
+        </nav>
+        <div class="header-actions">
+          <button id="dark-toggle" class="nav-link">Dark</button>
+          <a href="#" class="nav-link cart-link">Giỏ hàng (<span class="cart-count">0</span>)</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="section-title">Danh mục sản phẩm</h1>
+
+      <div class="filters">
+        <input id="search-input" placeholder="Tìm theo tên sản phẩm..." />
+        <select id="group-filter">
+          <option value="all">Tất cả nhóm</option>
+          <option value="nam">Nước Hoa Nam</option>
+          <option value="nu">Nước Hoa Nữ</option>
+          <option value="unisex">Unisex</option>
+          <option value="qua-tang">Quà Tặng</option>
+        </select>
+        <input id="price-min" type="number" placeholder="Giá từ" />
+        <input id="price-max" type="number" placeholder="Giá đến" />
+        <div class="tag-filters">
+          <button class="tag-filter active" data-tag="all">Tất cả</button>
+          <button class="tag-filter" data-tag="moi">Mới</button>
+          <button class="tag-filter" data-tag="hot">Hot</button>
+          <button class="tag-filter" data-tag="khuyen-mai">Khuyến mãi</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="catalog-grid"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand">Aura Perfume</p>
+          <p class="footer-copy">© 2026 Aura Perfume. Haute Parfumerie Minimaliste.</p>
+        </div>
+        <form id="contact-form" class="contact-form" novalidate>
+          <h3>Liên hệ</h3>
+          <input name="name" placeholder="Họ tên" />
+          <small id="err-name" class="err"></small>
+          <input name="email" placeholder="Email" />
+          <small id="err-email" class="err"></small>
+          <input name="phone" placeholder="Số điện thoại" />
+          <small id="err-phone" class="err"></small>
+          <textarea name="message" placeholder="Nội dung" rows="3"></textarea>
+          <small id="err-message" class="err"></small>
+          <button class="btn btn-primary" type="submit">Gửi</button>
+        </form>
+      </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/carts.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
