@@ -375,7 +375,22 @@ main {
 
   .main-nav {
     display: none;
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+    text-align: center;
+    padding: var(--space-sm) 0;
   }
+
+  .main-nav.open { display: flex; }
+
+  .header-inner { gap: var(--space-sm); flex-wrap: wrap; justify-content: center; }
+  .brand-logo { height: 44px; }
+  .countdown { font-size: 32px; }
+  .product-detail { grid-template-columns: 1fr; }
+  .filters input, .filters select { flex: 1 1 100%; }
+  .section-title { font-size: 24px; line-height: 32px; }
+  .flash-sale-banner { max-height: 220px; object-fit: cover; }
 
   .product-grid {
     grid-template-columns: 1fr;
@@ -475,3 +490,31 @@ body.dark .site-header { background: rgba(27,28,26,0.85); }
 .detail-media img { width: 100%; border: 1px solid rgba(26,24,22,0.08); }
 .detail-info .product-price { font-size: 24px; margin: var(--space-md) 0; }
 .detail-info .link-editorial { display: inline-block; margin-top: var(--space-md); }
+
+/* ---------- Dark toggle icon ---------- */
+.dark-toggle { font-size: 18px; line-height: 1; border: 0; background: none; cursor: pointer; padding: 4px; }
+
+/* ---------- Tablet/mobile polish ---------- */
+@media (max-width: 1024px) {
+  .slider .hero-title { font-size: 44px; line-height: 52px; }
+  .countdown { font-size: 40px; }
+  .product-detail { margin: var(--space-lg) auto; padding: 0 var(--margin-tablet); }
+}
+
+@media (max-width: 640px) {
+  .main-nav a { font-size: 10px; }
+  .header-actions { width: 100%; justify-content: center; display: flex; gap: var(--space-md); }
+  .slide-caption .hero-title { font-size: 30px; line-height: 38px; }
+  .slide-caption .btn { padding: 12px 24px; }
+  .flash-sale-caption { gap: 4px; }
+  .countdown { font-size: 28px; }
+  .featured, .flash-sale-banner { max-height: 180px; object-fit: cover; }
+  .contact-form { min-width: 0; width: 100%; }
+  .footer-inner { flex-direction: column; align-items: stretch; }
+}
+
+.nav-toggle { display: none; font-size: 22px; background: none; border: 0; cursor: pointer; color: var(--on-surface); padding: 4px 8px; }
+@media (max-width: 640px) {
+  .nav-toggle { display: block; }
+  .main-nav a { display: block; padding: var(--space-xs) 0; }
+}

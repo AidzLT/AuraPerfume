@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initDarkMode();
   initCountdown();
+  const navToggle = document.getElementById("nav-toggle");
+  if (navToggle) navToggle.addEventListener("click", () => document.querySelector(".main-nav").classList.toggle("open"));
   if (document.getElementById("catalog-grid")) initCatalog();
   updateCartBadge();
 });
@@ -187,9 +189,12 @@ function initDarkMode() {
   const btn = document.getElementById("dark-toggle");
   if (!btn) return;
   if (localStorage.getItem("aura_theme") === "dark") document.body.classList.add("dark");
+  const syncIcon = () => (btn.textContent = document.body.classList.contains("dark") ? "☀" : "☾");
+  syncIcon();
   btn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     localStorage.setItem("aura_theme", document.body.classList.contains("dark") ? "dark" : "light");
+    syncIcon();
   });
 }
 
