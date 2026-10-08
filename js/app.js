@@ -156,20 +156,40 @@ function initCatalog() {
   let keyword = "";
   let min = 0,
     max = Infinity;
+  let stock = "all";
+  let sort = "featured";
+
+  const syncURL = () => {
+    const p = new URLSearchParams();
+    if (group !== "all") p.set("group", group);
+    if (tag !== "all") p.set("tag", tag);
+    if (stock !== "all") p.set("stock", stock);
+    if (keyword) p.set("q", keyword);
+    if (min > 0) p.set("min", min);
+    if (max !== Infinity) p.set("max", max);
+    if (sort !== "featured") p.set("sort", sort);
+    history.replaceState(null, "", p.toString() ? "?" + p.toString() : location.pathname);
+  };
 
   const render = () => {
     const grid = document.getElementById("catalog-grid");
-    const list = PRODUCTS.filter(
+    let list = PRODUCTS.filter(
       (p) =>
         (group === "all" || p.gender === group) &&
         (tag === "all" || p.tag === tag) &&
         p.name.toLowerCase().includes(keyword.toLowerCase()) &&
         p.price >= min &&
-        p.price <= max,
+        p.price <= max &&
+        (stock === "all" || (stock === "in" && p.stock > 0) || (stock === "out" && p.stock === 0)),
     );
+    if (sort === "price-asc") list = [...list].sort((a, b) => a.price - b.price);
+    if (sort === "price-desc") list = [...list].sort((a, b) => b.price - a.price);
+    if (sort === "name-asc") list = [...list].sort((a, b) => a.name.localeCompare(b.name));
+    document.getElementById("result-count").textContent = `${list.length} sản phẩm`;
     grid.innerHTML = list.length
       ? list.map(productCard).join("")
       : "<p>Không có sản phẩm phù hợp.</p>";
+    syncURL();
   };
 
   document.querySelectorAll(".tag-filter").forEach((b) =>
@@ -196,5 +216,46 @@ function initCatalog() {
     max = Number(e.target.value) || Infinity;
     render();
   });
+  document.getElementById("stock-filter").addEventListener("change", (e) => {
+    stock = e.target.value;
+    render();
+  });
+  document.getElementById("sort-filter").addEventListener("change", (e) => {
+    sort = e.target.value;
+    render();
+  });
+  document.getElementById("clear-filters").addEventListener("click", () => {
+    group = "all"; tag = "all"; stock = "all"; keyword = ""; min = 0; max = Infinity; sort = "featured";
+    document.getElementById("group-filter").value = "all";
+    document.getElementById("stock-filter").value = "all";
+    document.getElementById("sort-filter").value = "featured";
+    document.getElementById("search-input").value = "";
+    document.getElementById("price-min").value = "";
+    document.getElementById("price-max").value = "";
+    document.querySelectorAll(".tag-filter").forEach((x) => x.classList.remove("active"));
+    document.querySelector('.tag-filter[data-tag="all"]').classList.add("active");
+    render();
+  });
+  document.getElementById("filter-open").addEventListener("click", () =>
+    document.getElementById("filter-sidebar").classList.add("open"),
+  );
+  document.getElementById("filter-close").addEventListener("click", () =>
+    document.getElementById("filter-sidebar").classList.remove("open"),
+  );
+  // khôi phục trạng thái từ URL
+  tag = params.get("tag") || "all";
+  stock = params.get("stock") || "all";
+  keyword = params.get("q") || "";
+  min = Number(params.get("min")) || 0;
+  max = params.get("max") ? Number(params.get("max")) : Infinity;
+  sort = params.get("sort") || "featured";
+  document.getElementById("search-input").value = keyword;
+  document.getElementById("price-min").value = min > 0 ? min : "";
+  document.getElementById("price-max").value = max !== Infinity ? max : "";
+  document.getElementById("stock-filter").value = stock;
+  document.getElementById("sort-filter").value = sort;
+  document.querySelectorAll(".tag-filter").forEach((x) =>
+    x.classList.toggle("active", x.dataset.tag === tag),
+  );
   render();
 }

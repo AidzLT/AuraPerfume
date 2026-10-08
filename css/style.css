@@ -909,3 +909,59 @@ body.dark .site-header {
     height: 60px;
   }
 }
+
+/* ---------- Catalog (Walmart-style) ---------- */
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+#result-count {
+  margin-right: auto;
+  font-size: 13px;
+  color: var(--outline);
+}
+#filter-open { display: none; }
+#filter-close { display: none; }
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: var(--space-xl);
+}
+.filters {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-sm);
+  margin-bottom: 0;
+}
+.filters input,
+.filters select { width: 100%; }
+.tag-filters { flex-wrap: wrap; }
+
+@media (max-width: 1023px) {
+  .catalog-layout { grid-template-columns: 1fr; }
+  #filter-open { display: inline-block; }
+  .filters {
+    display: none;
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(320px, 85vw);
+    background: var(--surface);
+    padding: var(--space-lg);
+    z-index: 60;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    overflow-y: auto;
+  }
+  .filters.open { display: flex; }
+  #filter-close {
+    display: block;
+    align-self: flex-end;
+    font-size: 24px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+}

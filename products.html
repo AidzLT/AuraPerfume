@@ -16,7 +16,11 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="index.html">
-          <img src="images/logo/AURA Perfume Metallic Gold Logo.png" alt="Aura Perfume Logo" class="brand-logo" />
+          <img
+            src="images/logo/AURA Perfume Metallic Gold Logo.png"
+            alt="Aura Perfume Logo"
+            class="brand-logo"
+          />
         </a>
         <button id="nav-toggle" class="nav-toggle" aria-label="Menu">☰</button>
         <nav class="main-nav">
@@ -28,7 +32,9 @@
         </nav>
         <div class="header-actions">
           <button id="dark-toggle" class="nav-link dark-toggle" aria-label="Chế độ tối">☾</button>
-          <a href="cart.html" class="nav-link cart-link">Giỏ hàng (<span class="cart-count">0</span>)</a>
+          <a href="cart.html" class="nav-link cart-link"
+            >Giỏ hàng (<span class="cart-count">0</span>)</a
+          >
         </div>
       </div>
     </header>
@@ -36,26 +42,46 @@
     <main>
       <h1 class="section-title">Danh mục sản phẩm</h1>
 
-      <div class="filters">
-        <input id="search-input" placeholder="Tìm theo tên sản phẩm..." />
-        <select id="group-filter">
-          <option value="all">Tất cả nhóm</option>
-          <option value="nam">Nước Hoa Nam</option>
-          <option value="nu">Nước Hoa Nữ</option>
-          <option value="unisex">Unisex</option>
-          <option value="qua-tang">Quà Tặng</option>
+      <div class="catalog-toolbar">
+        <span id="result-count"></span>
+        <select id="sort-filter">
+          <option value="featured">Tiêu biểu</option>
+          <option value="price-asc">Giá: Thấp đến cao</option>
+          <option value="price-desc">Giá: Cao đến thấp</option>
+          <option value="name-asc">Tên: A đến Z</option>
         </select>
-        <input id="price-min" type="number" placeholder="Giá từ" />
-        <input id="price-max" type="number" placeholder="Giá đến" />
-        <div class="tag-filters">
-          <button class="tag-filter active" data-tag="all">Tất cả</button>
-          <button class="tag-filter" data-tag="moi">Mới</button>
-          <button class="tag-filter" data-tag="hot">Hot</button>
-          <button class="tag-filter" data-tag="khuyen-mai">Khuyến mãi</button>
-        </div>
+        <button id="filter-open" class="btn btn-ghost">Filter</button>
       </div>
 
-      <div class="product-grid" id="catalog-grid"></div>
+      <div class="catalog-layout">
+        <aside id="filter-sidebar" class="filters">
+          <button id="filter-close" aria-label="Đóng">×</button>
+          <input id="search-input" placeholder="Tìm theo tên sản phẩm..." />
+          <select id="group-filter">
+            <option value="all">Tất cả nhóm</option>
+            <option value="nam">Nước Hoa Nam</option>
+            <option value="nu">Nước Hoa Nữ</option>
+            <option value="unisex">Unisex</option>
+            <option value="qua-tang">Quà Tặng</option>
+          </select>
+          <input id="price-min" type="number" placeholder="Giá từ" />
+          <input id="price-max" type="number" placeholder="Giá đến" />
+          <select id="stock-filter">
+            <option value="all">Tất cả hàng</option>
+            <option value="in">Còn hàng</option>
+            <option value="out">Hết hàng</option>
+          </select>
+          <div class="tag-filters">
+            <button class="tag-filter active" data-tag="all">Tất cả</button>
+            <button class="tag-filter" data-tag="moi">Mới</button>
+            <button class="tag-filter" data-tag="hot">Hot</button>
+            <button class="tag-filter" data-tag="khuyen-mai">Khuyến mãi</button>
+          </div>
+          <button id="clear-filters" class="btn btn-ghost">Xóa lọc</button>
+        </aside>
+
+        <div class="product-grid" id="catalog-grid"></div>
+      </div>
     </main>
 
     <footer class="site-footer">
