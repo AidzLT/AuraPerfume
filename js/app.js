@@ -27,9 +27,9 @@ function productCard(p) {
       <p class="product-notes">${p.notes}</p>
       <p class="product-price">${formatPrice(p.price)}</p>
       <div class="product-actions">
-        <a class="btn btn-ghost" href="product.html?id=${p.id}">Xem chi tiết</a>
         <button class="btn btn-primary" data-add="${p.id}">Thêm giỏ</button>
       </div>
+      <a class="link-editorial" href="product.html?id=${p.id}">Xem chi tiết</a>
     </article>`;
 }
 
@@ -225,7 +225,13 @@ function initCatalog() {
     render();
   });
   document.getElementById("clear-filters").addEventListener("click", () => {
-    group = "all"; tag = "all"; stock = "all"; keyword = ""; min = 0; max = Infinity; sort = "featured";
+    group = "all";
+    tag = "all";
+    stock = "all";
+    keyword = "";
+    min = 0;
+    max = Infinity;
+    sort = "featured";
     document.getElementById("group-filter").value = "all";
     document.getElementById("stock-filter").value = "all";
     document.getElementById("sort-filter").value = "featured";
@@ -236,12 +242,16 @@ function initCatalog() {
     document.querySelector('.tag-filter[data-tag="all"]').classList.add("active");
     render();
   });
-  document.getElementById("filter-open").addEventListener("click", () =>
-    document.getElementById("filter-sidebar").classList.add("open"),
-  );
-  document.getElementById("filter-close").addEventListener("click", () =>
-    document.getElementById("filter-sidebar").classList.remove("open"),
-  );
+  document
+    .getElementById("filter-open")
+    .addEventListener("click", () =>
+      document.getElementById("filter-sidebar").classList.add("open"),
+    );
+  document
+    .getElementById("filter-close")
+    .addEventListener("click", () =>
+      document.getElementById("filter-sidebar").classList.remove("open"),
+    );
   // khôi phục trạng thái từ URL
   tag = params.get("tag") || "all";
   stock = params.get("stock") || "all";
@@ -254,8 +264,8 @@ function initCatalog() {
   document.getElementById("price-max").value = max !== Infinity ? max : "";
   document.getElementById("stock-filter").value = stock;
   document.getElementById("sort-filter").value = sort;
-  document.querySelectorAll(".tag-filter").forEach((x) =>
-    x.classList.toggle("active", x.dataset.tag === tag),
-  );
+  document
+    .querySelectorAll(".tag-filter")
+    .forEach((x) => x.classList.toggle("active", x.dataset.tag === tag));
   render();
 }
